@@ -1,0 +1,79 @@
+@import "../../assets/styles/mixins/mixins";
+
+.GiftModal__wrap {
+    .ant-modal-body {
+        @include media($tablet) {
+            width: 536px;
+            padding: 48px;
+        }
+    }
+
+    .GiftModal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        &__title-modal {
+            text-align: center;
+            @include fontTitle5;
+        }
+
+        &__content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            min-height: 480px;
+
+            &__content {
+                margin-top: 20px;
+
+                @include media($tablet) {
+                    width: 100px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+                @include media($desktop) {
+                    width: 80px;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                @include media($large) {
+                    width: 100px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                .gift-from {
+                    @include fontTitle2;
+                }
+
+                .price {
+                    color: var(--ui-red);
+                }
+
+                .gift-column {
+                    margin: 10px 0 10px;
+
+                    .gift-wrapper {
+                        margin: 10px 0 10px;
+
+                        .img-wrapper {
+                            .img {
+                                width: 80px;
+                                height: 64px;
+                            }
+                        }
+
+                        .gift-name {
+                            @include fontTitle1;
+                        }
+                    }
+                }
+            }
+        }
+        .small {
+            justify-content: flex-start;
+        }
+    }
+}

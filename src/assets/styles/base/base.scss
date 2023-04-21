@@ -1,0 +1,173 @@
+@import "../mixins/mixins";
+
+body {
+    font-family: "Museo Sans Cyrl 500", serif;
+    font-weight: 500;
+    min-height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    @include media($mobile) {
+        max-width: $mobile;
+        padding: 12px 16px;
+    }
+
+    @include media($tablet) {
+        max-width: $tablet;
+        padding: 12px 20px;
+    }
+
+    @include media($desktop) {
+        max-width: $desktop;
+        padding: 12px 28px;
+    }
+
+    @include media($large) {
+        max-width: $large;
+        padding: 12px 40px;
+
+    }
+}
+
+.basket-container {
+    margin: 0 auto;
+    width: 100%;
+    @include media($mobile) {
+        max-width: 348px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include media($tablet) {
+        max-width: 768px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include media($desktop) {
+        max-width: 676px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+    @include media($large) {
+        max-width: 800px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.basket-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--ui-gray);
+    margin-top: 12px;
+    margin-bottom: 20px;
+    @include media($large) {
+        margin-top: 16px;
+    }
+}
+
+.field {
+    background: var(--ui-gray-hover);
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    @include media($mobile) {
+        width: 328px;
+        height: 32px;
+    }
+    @include media($tablet) {
+        width: 508px;
+        height: 32px;
+    }
+    @include media($desktop) {
+        width: 400px;
+        height: 32px;
+    }
+    @include media($large) {
+        width: 500px;
+        height: 36px;
+    }
+}
+
+.icon-fix > div {
+    display: flex;
+}
+
+.ant-modal {
+    width: max-content !important;
+}
+
+.ant-modal-content {
+    border-radius: 12px;
+}
+
+.ant-modal-close-x {
+    margin-top: 10px;
+
+    .close-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.modal-title {
+    @include fontTitle5;
+    color: var(--ui-dark);
+    margin-bottom: 20px;
+    text-align: center;
+    @include media($large) {
+        margin-bottom: 24px;
+    }
+}
+
+.modal-subtitle {
+    @include fontText2;
+    color: var(--ui-dark);
+    text-align: center;
+    margin-bottom: 20px;
+    @include media($large) {
+        margin-bottom: 24px;
+    }
+}
+
+.old-price {
+    color: var(--ui-gray-secondary);
+    margin-right: 12px;
+    @include fontTitleButton;
+    @include media($large) {
+        margin-right: 20px;
+    }
+
+    .value {
+        text-decoration: line-through;
+    }
+}
+
+.product-card-name {
+    @include fontTitleButton;
+    color: var(--ui-dark);
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    @include media($mobile) {
+        margin: 12px 0 8px 0;
+        min-height: 32px;
+    }
+    @include media($tablet) {
+        min-height: 32px;
+        padding: 0 26px 20px 12px;
+    }
+    @include media($desktop) {
+        padding: 0 30px 14px 12px;
+        min-height: 32px;
+    }
+    @include media($large) {
+        padding: 0 32px 16px 20px;
+        min-height: 40px;
+    }
+}

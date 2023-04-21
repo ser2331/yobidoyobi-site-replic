@@ -1,0 +1,18 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ErrorModal__wrap {
+  .ant-modal-body {
+    @include media($tablet) {
+      width: 496px;
+      padding: 48px;
+    }
+  }
+  .ErrorModal {
+    @include media($mobile) {
+      width: 288px;
+    }
+    @include media($tablet) {
+      width: 400px;
+    }
+  }
+}

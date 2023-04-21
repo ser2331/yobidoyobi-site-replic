@@ -1,0 +1,60 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Scroll-top {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: var(--ui-eggplant);
+    @include fontButton;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        transform: rotate(-90deg);
+        height: 56px;
+
+        @include media($large) {
+            height: 66px;
+        }
+    }
+
+    &__button {
+
+        @include media($tablet) {
+            &, & svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        @include media($desktop) {
+            &, & svg {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        @include media($large) {
+            &, & svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}
+
+.ant-back-top {
+    width: auto !important;
+    height: auto !important;
+    opacity: .7;
+    transition: opacity 300ms linear;
+    bottom: 50px !important;
+    left: 100px !important;
+    right: auto !important;
+    @include media($large) {
+        bottom: 80px !important;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,58 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Basket-step3-footer {
+    display: flex;
+    @include media($mobile) {
+        width: 276px;
+        margin: 28px auto 122px;
+        flex-direction: column-reverse;
+    }
+    @include media($tablet) {
+        width: 544px;
+        margin: 50px auto 320px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    @include media($desktop) {
+        width: 540px;
+        margin: 92px auto 0;
+    }
+    @include media($large) {
+        margin: 88px auto 0;
+    }
+
+    &__button {
+        @include media($mobile) {
+            height: 48px;
+        }
+        @include media($tablet) {
+            height: 52px;
+        }
+        @include media($desktop) {
+            height: 48px;
+        }
+        @include media($large) {
+            height: 52px;
+        }
+    }
+
+    &__back-button {
+        @include media($mobile) {
+            width: auto;
+        }
+        @include media($tablet) {
+            width: 240px;
+        }
+        opacity: 0.5;
+    }
+
+    &__track-button {
+        @include media($mobile) {
+            margin-bottom: 20px;
+        }
+        @include media($tablet) {
+            margin-bottom: 0;
+        }
+        width: 276px;
+    }
+}

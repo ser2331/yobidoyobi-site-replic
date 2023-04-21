@@ -1,0 +1,96 @@
+@import "../../assets/styles/mixins/mixins";
+
+.AboutCompanyContent {
+    &__name {
+        text-align: center;
+        @include fontTitle5;
+
+        @include media($mobile) {
+            margin: 28px 0 40px;
+        }
+        @include media($tablet) {
+            margin: 40px 0 28px;
+        }
+        @include media($desktop) {
+            margin: 40px 0 20px;
+        }
+        @include media($large) {
+            margin: 40px 0 28px;
+        }
+
+    }
+
+    &__wrapper {
+        width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        @include media($mobile) {
+            flex-direction: column;
+        }
+
+        @include media($desktop) {
+            flex-direction: row;
+        }
+
+        &__left-zone {
+            flex: 1 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .text-wrapper {
+                @include fontText2;
+                margin: 6px;
+                @include media($tablet) {
+                    padding: 0 40px
+                }
+
+                @include media($desktop) {
+                    padding: 0 10px
+                }
+            }
+
+            .image-wrapper {
+                .image {
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        &__right-zone {
+            flex: 1 1;
+            @include media($mobile) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @include media($desktop) {
+                align-items: flex-start;
+            }
+
+            .image-wrapper {
+                @include media($mobile) {
+                    margin-top: 6px;
+                }
+                @include media($tablet) {
+                    width: 506px;
+                    margin-top: 12px;
+                }
+                @include media($desktop) {
+                    width: auto;
+                    height: 80%;
+                    margin-top: 0;
+                }
+                @include media($large) {
+                    height: 100%;
+                }
+
+                .image {
+                    height: 100%;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketStepIndicator {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &__circle {
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--ui-white);
+        border: 2px solid var(--ui-gray);
+        border-radius: 50%;
+        @include fontTitle6;
+        color: var(--ui-gray);
+        transition: all 300ms linear;
+
+        @include media($mobile) {
+            width: 24px;
+            height: 24px;
+        }
+        @include media($tablet) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__title {
+        @include fontButton;
+        color: var(--ui-gray);
+        transition: all 300ms linear;
+    }
+}
+
+.BasketStepIndicator.active {
+    .BasketStepIndicator__circle {
+        border-color: var(--ui-dark);
+        color: var(--ui-dark);
+    }
+
+    .BasketStepIndicator__title {
+        color: var(--ui-dark);
+    }
+}
+
+.BasketStepIndicator.finishStep {
+    .BasketStepIndicator__circle {
+        border-color: var(--ui-green);
+        color: var(--ui-green);
+    }
+
+    .BasketStepIndicator__title {
+        color: var(--ui-green);
+    }
+}

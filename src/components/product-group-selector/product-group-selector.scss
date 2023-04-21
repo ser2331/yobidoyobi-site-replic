@@ -1,0 +1,82 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProductGroupSelector {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--ui-white);
+    z-index: 200;
+    @include fontButton;
+
+    @include media($mobile) {
+        height: 40px;
+    }
+    @include media($tablet) {
+        height: 48px;
+    }
+    @include media($large) {
+        height: 56px;
+    }
+
+    &__slider-wrapper {
+        @include media($mobile) {
+            max-width: calc(100%);
+        }
+        @include media($tablet) {
+            max-width: calc(100% - 188px);
+        }
+        @include media($large) {
+            max-width: calc(100% - 201px);
+        }
+    }
+
+    &__group {
+        white-space: nowrap;
+        padding: 0 6px;
+        user-select: none;
+    }
+
+    .link {
+        display: inline-flex;
+        color: var(--ui-dark);
+        transition: all 300ms linear;
+
+        &:hover {
+            color: var(--ui-gray-secondary);
+        }
+
+        &:active {
+            color: var(--ui-red);
+        }
+    }
+
+    .star .link {
+        color: var(--ui-red);
+
+        path {
+            fill: var(--ui-red);
+            transition: all 300ms linear;
+        }
+
+        &:hover {
+            color: var(--ui-red-hover);
+
+            path {
+                fill: var(--ui-red-hover);
+            }
+        }
+    }
+
+    .star-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+
+        div {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProductFilter {
+    height: auto;
+    overflow: hidden;
+
+    &__header {
+        height: 32px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: max-content;
+        margin-left: auto;
+        margin-right: 0;
+        color: var(--ui-eggplant);
+        transition: opacity 300ms linear;
+        user-select: none;
+        @include fontButton;
+        @include media($mobile) {
+            margin-top: -16px;
+        }
+        @include media($tablet) {
+            margin-top: 0;
+        }
+
+        .filter-icon {
+            margin-left: 12px;
+
+            svg {
+                width: 16px;
+                height: 16px;
+                @include media($large) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: .5;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: row wrap;
+        transition: all 300ms linear;
+        padding-bottom: 12px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        user-select: none;
+
+        @include media($mobile) {
+            flex: 0 0 33%;
+            height: 20px;
+            margin-top: 12px;
+        }
+        @include media($tablet) {
+            flex: 0 0 25%;
+            height: 28px;
+            margin-top: 16px;
+        }
+        @include media($desktop) {
+            flex: 0 0 20%;
+            height: 24px;
+            margin-top: 12px;
+        }
+        @include media($large) {
+            height: 28px;
+            margin-top: 16px;
+        }
+
+        .item-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--ui-dark);
+            @include fontText2;
+        }
+    }
+
+    &__item.selected {
+        .like-icon path {
+            stroke: var(--ui-red);
+            fill: var(--ui-red);
+        }
+    }
+
+    &__item.unselected {
+        text-decoration: line-through;
+
+        .dislike-icon path {
+            fill: var(--ui-red);
+        }
+    }
+
+    .dislike-icon, .like-icon {
+        svg {
+            @include media($mobile) {
+                width: 16px;
+                height: 16px;
+                margin-right: 6px;
+            }
+            @include media($tablet) {
+                width: 28px;
+                height: 28px;
+                margin-right: 12px;
+            }
+            @include media($desktop) {
+                width: 24px;
+                height: 24px;
+            }
+            @include media($large) {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.expand &__header {
+        opacity: .5;
+    }
+
+    .filter-fade-enter {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    .filter-fade-enter-active {
+        opacity: 1;
+        max-height: 1000px;
+    }
+
+    .filter-fade-exit {
+        opacity: 1;
+        max-height: 1000px;
+    }
+
+    .filter-fade-exit-active {
+        opacity: 0;
+        max-height: 0;
+    }
+}

@@ -1,0 +1,156 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    @include media($desktop) {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    @include media($large) {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    @include media($large) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__left-zone, &__right-zone {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .SocialLinks {
+            @include media($desktop) {
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .Logo, .CitySelector, .SocialLinks {
+        margin-right: 40px;
+
+        @include media($large) {
+            margin-right: 52px;
+        }
+    }
+
+    .CitySelector {
+        @include media($desktop) {
+            margin-top: 3.5px;
+        }
+
+        @include media($large) {
+            margin-right: 52px;
+            margin-top: 10px;
+        }
+    }
+
+    &__buttons-wrapper {
+        display: flex;
+        align-items: flex-start;
+        @include media($desktop) {
+            margin-top: 8px;
+        }
+        @include media($large) {
+            margin-top: 22px;
+        }
+    }
+
+    .SocialLinks {
+        @include media($desktop) {
+            margin-top: 2px;
+        }
+        @include media($large) {
+            margin-top: 12px;
+        }
+    }
+
+    &__call-me {
+        color: var(--ui-red);
+        transition: color 300ms linear;
+        border: none;
+        background: transparent;
+        @include fontButtonCode;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--ui-red-hover);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__auth-button {
+        width: 140px;
+        @include media($desktop) {
+            margin-top: 3.5px;
+        }
+        @include media($large) {
+            margin-top: 12px;
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        height: 32px;
+
+        .user-name-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 4px;
+        }
+
+        .user-name {
+            margin-right: 8px;
+            white-space: nowrap;
+            max-width: 180px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.Header-gadget {
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+    }
+
+    &__left-zone, &__right-zone {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 0;
+    }
+
+    &__right-zone {
+        border: none;
+        background-color: var(--ui-white);
+        width: 48px;
+        height: 48px;
+        @include media($mobile) {
+            width: 28px;
+            height: 28px;
+        }
+        @include media($tablet) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+}

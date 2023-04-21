@@ -1,0 +1,207 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProductGroup {
+    &__name {
+        color: var(--ui-dark);
+        margin: 12px 0;
+        @include fontTitle4;
+    }
+
+    &__items {
+        padding-top: 12px;
+        display: flex;
+
+        @include media($desktop) {
+            margin-bottom: 24px;
+        }
+        @include media($large) {
+            padding-top: 16px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .ant-row {
+        display: flex;
+
+        @include media($mobile) {
+            flex-flow: column wrap;
+        }
+        @include media($tablet) {
+            flex-flow: row wrap;
+        }
+    }
+
+    &__item {
+        padding: 12px 0;
+
+        @include media($mobile) {
+            display: flex;
+            width: 100%;
+        }
+        @include media($tablet) {
+            display: block;
+            padding: 12px 12px;
+        }
+        @include media($desktop) {
+            padding: 12px 0;
+        }
+        @include media($large) {
+            padding: 20px 0;
+        }
+
+        &__img-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
+            @include media($mobile) {
+                width: 124px;
+                height: 92px;
+                margin-right: 12px;
+            }
+            @include media($tablet) {
+                width: 212px;
+                height: 157px;
+                margin-right: 0;
+            }
+            @include media($desktop) {
+                width: 265px;
+                height: 194px;
+                padding: 0;
+            }
+            @include media($large) {
+                width: 325px;
+                height: 240px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__right-zone {
+            flex-grow: 1;
+        }
+
+        &__description-row {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            user-select: none;
+            position: relative;
+            @include media($mobile) {
+                padding: 0;
+            }
+            @include media($tablet) {
+                padding: 0 12px;
+            }
+            @include media($large) {
+                padding: 0 20px;
+            }
+
+            .weight {
+                color: var(--ui-gray-secondary);
+                flex-grow: 1;
+                @include fontText1;
+            }
+        }
+
+        .price {
+            white-space: nowrap;
+
+            @include fontButton;
+            @include media($mobile) {
+                width: 74px;
+                height: 32px;
+                padding: 0 8px;
+            }
+            @include media($tablet) {
+                width: 84px;
+                padding: 0 12px;
+            }
+            @include media($desktop) {
+                width: 84px;
+                height: 24px;
+            }
+            @include media($large) {
+                width: 104px;
+                height: 36px;
+                padding: 0 20px;
+            }
+        }
+
+        &__top-zone {
+            position: relative;
+
+            .product-card-name {
+                @include media($mobile) {
+                    padding-right: 32px;
+                }
+                @include media($large) {
+                    padding: 0 52px 16px 20px;
+                }
+            }
+
+            .tooltip-wrapper {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include media($tablet) {
+                    right: 12px;
+                }
+                @include media($large) {
+                    right: 20px;
+                }
+
+                svg {
+                    @include media($mobile) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    @include media($tablet) {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    @include media($large) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+        &__product-indicator-wrapper {
+            display: flex;
+            position: absolute;
+            top: 10px;
+            left: 4px;
+        }
+    }
+}
+
+.product-card-tooltip {
+
+    .tooltip-inner {
+        color: var(--ui-white);
+
+        &__title {
+            @include fontText2;
+            margin-bottom: 10px;
+        }
+
+        &__row {
+            display: flex;
+            flex-flow: row;
+            @include fontText1;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+
+            .label {
+                width: 120px;
+                @include media($large) {
+                    width: 140px;
+                }
+            }
+        }
+    }
+}

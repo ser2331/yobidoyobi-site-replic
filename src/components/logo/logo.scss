@@ -1,0 +1,56 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Logo {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: max-content;
+    height: max-content;
+
+    &__img {
+        @include media($desktop) {
+            margin-bottom: 10px;
+        }
+
+        @include media($large) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__img svg {
+        @include media($mobile) {
+            width: 98px;
+            height: 32px;
+        }
+        @include media($tablet) {
+            width: 148px;
+            height: 48px;
+        }
+        @include media($desktop) {
+            width: 133px;
+            height: 43px;
+        }
+
+        @include media($large) {
+            width: 200px;
+            height: 64px;
+        }
+    }
+
+    &__description {
+        @include fontText4;
+        color: var(--ui-dark);
+        user-select: none;
+    }
+}
+
+.Logo.inverse {
+    .logo-color-control {
+        fill: var(--ui-white);
+    }
+
+    .Logo__description {
+        color: var(--ui-white);
+    }
+}

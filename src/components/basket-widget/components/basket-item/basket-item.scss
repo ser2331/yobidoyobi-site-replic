@@ -1,0 +1,319 @@
+@import "../../../../assets/styles/mixins/mixins";
+
+.BasketItem {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    user-select: none;
+
+    &__img-wrapper {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media($mobile) {
+            width: 109px;
+            height: 80px;
+        }
+        @include media($desktop) {
+            width: 78px;
+            height: 58px;
+        }
+        @include media($large) {
+            width: 109px;
+            height: 80px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__compound, .title {
+        color: var(--ui-dark);
+        word-break: break-word;
+
+        @include media($mobile) {
+            width: 170px;
+        }
+        @include media($tablet) {
+            width: 216px;
+        }
+        @include media($desktop) {
+            width: 166px;
+        }
+        @include media($large) {
+            width: 184px;
+        }
+    }
+
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+            @include fontTitle2;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__compound {
+        @include fontMiniText;
+        margin-bottom: 8px;
+    }
+
+    &__control {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        .BasketCounter {
+            @include media($mobile) {
+                width: 112px;
+                height: 36px;
+            }
+            @include media($tablet) {
+                width: 76px;
+                height: 28px;
+            }
+            @include media($desktop) {
+                width: 72px;
+                height: 24px;
+            }
+            @include media($large) {
+                width: 88px;
+                height: 36px;
+            }
+        }
+    }
+
+    &__price {
+        @include fontButton;
+        color: var(--ui-dark);
+    }
+
+    .trash-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: .5;
+        transition: opacity 300ms linear;
+
+        svg {
+            @include media($mobile) {
+                width: 20px;
+                height: 20px;
+            }
+            @include media($desktop) {
+                width: 16px;
+                height: 16px;
+            }
+            @include media($large) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+}
+
+.BasketItem-basket {
+    display: flex;
+
+    @include media($mobile) {
+        align-items: normal;
+    }
+    @include media($tablet) {
+        align-items: center;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .BasketItem__img-wrapper {
+        @include media($mobile) {
+            width: 74px;
+            height: 54px;
+            margin-right: 12px;
+        }
+
+        @include media($tablet) {
+            width: 120px;
+            height: 88px;
+            margin-right: 31px;
+        }
+
+        @include media($desktop) {
+            width: 110px;
+            height: 81px;
+            margin-right: 16px;
+        }
+
+        @include media($large) {
+            width: 120px;
+            height: 88px;
+            margin-right: 22px;
+        }
+    }
+
+    .BasketItem__content {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+
+    .BasketItem__content-all {
+        @include media($mobile) {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        @include media($tablet) {
+            display: flex;
+            width: 530px;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        @include media($desktop) {
+            display: flex;
+            width: 468px;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        @include media($large) {
+            display: flex;
+            width: 548px;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    }
+
+    .BasketItem__second-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media($mobile) {
+            width: 196px;
+            flex-flow: row-reverse nowrap;
+            margin-top: 8px;
+        }
+        @include media($tablet) {
+            width: 180px;
+            flex-flow: row nowrap;
+            margin-top: 0;
+        }
+        @include media($desktop) {
+            width: 156px;
+        }
+    }
+
+    .BasketItem__title,
+    .BasketItem__compound {
+        padding: 0;
+        margin-bottom: 12px;
+        @include media($mobile) {
+            width: 196px;
+            margin-bottom: 4px;
+        }
+        @include media($tablet) {
+            width: 320px;
+            margin-bottom: 12px;
+        }
+        @include media($large) {
+            width: 352px;
+        }
+    }
+
+    .BasketItem__title {
+        @include fontTitleButton;
+    }
+
+    .BasketItem__compound {
+        @include fontText2;
+    }
+
+    .BasketItem__weight {
+        @include fontText1;
+        color: var(--ui-gray-secondary);
+    }
+
+    .BasketItem__price {
+        @include media($mobile) {
+            flex: 1 1;
+            text-align: left;
+        }
+        @include media($tablet) {
+            text-align: right;
+        }
+    }
+
+    .trash-icon {
+        @include media($mobile) {
+            position: absolute;
+        }
+        @include media($tablet) {
+            position: static;
+        }
+
+        svg {
+            @include media($mobile) {
+                width: 20px;
+                height: 20px;
+            }
+            @include media($tablet) {
+                width: 16px;
+                height: 16px;
+            }
+            @include media($large) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .BasketCounter {
+        border-radius: 8px;
+        padding: 0 8px;
+        @include media($mobile) {
+            width: 100px;
+            height: 36px;
+        }
+        @include media($tablet) {
+            width: 88px;
+            height: 36px;
+        }
+        @include media($desktop) {
+            width: 80px;
+            height: 32px;
+        }
+        @include media($large) {
+            width: 88px;
+            height: 36px;
+        }
+
+        &__count {
+            color: var(--ui-dark);
+        }
+
+        &__minus-icon path {
+            stroke: var(--ui-dark);
+        }
+
+        &__plus-icon path {
+            fill: var(--ui-dark);
+        }
+    }
+}

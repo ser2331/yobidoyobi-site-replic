@@ -1,0 +1,125 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketFooter {
+    padding: 36px 0;
+    background: var(--ui-gray-tertiary);
+
+    &__row {
+        display: flex;
+        flex-flow: row nowrap;
+        @include media($tablet) {
+            justify-content: space-around;
+        }
+        @include media($desktop) {
+            justify-content: space-between;
+        }
+
+        &:not(:last-child) {
+            @include media($mobile) {
+                margin-bottom: 24px;
+            }
+            @include media($tablet) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .totalMobile {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
+    .buttonsMobile {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__total {
+        text-align: right;
+    }
+
+    .sum-wrapper {
+        &__sum {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            @include fontTitle5;
+        }
+        &__remaining {
+            @include fontButton;
+
+            @include media($mobile) {
+                width: 200px;
+                height: 48px;
+            }
+            @include media($tablet) {
+                width: 300px;
+                height: 32px;
+            }
+        }
+    }
+
+    .sum {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include fontTitle5;
+    }
+
+    .delivery {
+        @include fontButton;
+        color: var(--ui-red);
+    }
+
+    .basket-footer-button {
+        text-transform: uppercase;
+        @include media($tablet) {
+            height: 52px;
+        }
+        @include media($desktop) {
+            height: 48px;
+        }
+        @include media($large) {
+            height: 52px;
+        }
+    }
+
+    .apply-button {
+        opacity: 1;
+        @include media($mobile) {
+            width: 158px;
+            height: 40px;
+        }
+        @include media($tablet) {
+            width: 300px;
+            height: 52px;
+        }
+        @include media($desktop) {
+            width: 276px;
+            height: 48px;
+        }
+        @include media($large) {
+            width: 300px;
+            height: 52px;
+        }
+    }
+
+    .back-button {
+        background: var(--ui-gray-hover);
+        border-color: var(--ui-gray-hover);
+        color: var(--ui-dark-half);
+        @include media($mobile) {
+            width: 158px;
+            height: 40px;
+        }
+        @include media($tablet) {
+            width: 240px;
+            height: 52px;
+        }
+    }
+
+    .apply-button[disabled] {
+        opacity: 1;
+        color: var(--ui-dark-half);
+    }
+
+}

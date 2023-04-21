@@ -1,0 +1,103 @@
+@import "../../assets/styles/mixins/mixins";
+
+.DeliveryMapContent {
+    &__name {
+        text-align: center;
+        @include fontTitle5;
+        @include media($mobile) {
+            margin: 32px 0 40px;
+        }
+        @include media($tablet) {
+            margin: 40px 0 28px;
+        }
+
+        @include media($desktop) {
+            margin: 44px 0 20px;
+        }
+        @include media($large) {
+            margin: 37px 0 28px;
+        }
+
+    }
+
+    &__map-wrapper {
+        display: flex;
+        justify-content: space-between;
+        @include media($mobile) {
+            flex-flow: column nowrap;
+            margin: 40px -16px;
+        }
+        @include media($tablet) {
+            flex-flow: row nowrap;
+            margin: 40px -24px;
+        }
+        @include media($desktop) {
+            margin: 40px -28px;
+        }
+        @include media($large) {
+            margin: 40px -40px;
+        }
+
+        .our-address-wrapper {
+                @include media($mobile) {
+                    width: 360px;
+                }
+                @include media($tablet) {
+                    width: 388px;
+                }
+                @include media($desktop) {
+                    width: 352px;
+                    padding: 0 28px;
+                }
+                @include media($large) {
+                    width: 428px;
+                    padding: 0 40px;
+                }
+
+            .our-address {
+                @include fontTitle4;
+                color: var(--ui-gray-secondary);
+                @include media($mobile) {
+                    margin-bottom: 28px;
+                }
+                @include media($tablet) {
+                    margin-bottom: 20px;
+                }
+                @include media($desktop) {
+                    margin-bottom: 16px;
+                }
+                @include media($large) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .address {
+                display: flex;
+                margin-bottom: 16px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                @include fontTitle2;
+
+                svg {
+                    margin-right: 8px;
+                    @include media($desktop) {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+
+        .map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            flex: 1.7 0;
+
+            .comment-content {
+                @include fontText5;
+            }
+        }
+    }
+}

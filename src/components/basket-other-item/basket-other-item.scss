@@ -1,0 +1,100 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketOtherItem {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+    @include media($mobile) {
+        width: 164px;
+        height: 192px;
+    }
+    @include media($tablet) {
+        width: 224px;
+        height: 270px;
+    }
+    @include media($desktop) {
+        width: 204px;
+        height: 294px;
+    }
+    @include media($large) {
+        width: 220px;
+        height: 342px;
+    }
+
+    &__img-wrapper {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--ui-white);
+        border-radius: 4px;
+        @include media($mobile) {
+            width: 80px;
+            height: 80px;
+        }
+        @include media($tablet) {
+            width: 160px;
+            height: 160px;
+        }
+        @include media($desktop) {
+            width: 180px;
+            height: 180px;
+        }
+        @include media($large) {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    &__title-wrapper {
+        padding: 1rem;
+
+        @include media($mobile) {
+            width: 158px;
+        }
+        @include media($tablet) {
+            width: 224px;
+        }
+        @include media($desktop) {
+            width: 204px;
+        }
+        @include media($large) {
+            width: 220px;
+        }
+
+        .title {
+            text-align: center;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+            height: 2.9em;
+            @include fontTitleButton;
+        }
+
+    }
+
+    &__volume {
+        @include fontText1;
+        margin-right: 8px;
+    }
+
+    &__row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        width: 84px;
+        height: 24px;
+        @include media($large) {
+            height: 28px;
+        }
+    }
+}

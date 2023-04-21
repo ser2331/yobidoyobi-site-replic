@@ -1,0 +1,183 @@
+@import "../../assets/styles/mixins/mixins";
+
+.PromoCode {
+    &__form {
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        align-items: flex-start;
+
+        @include media($mobile) {
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+        @include media($tablet) {
+            justify-content: normal;
+            margin-top: 0;
+        }
+    }
+
+    &__input {
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-right: 8px;
+        color: var(--ui-dark);
+        border: 1px solid var(--ui-white);
+        box-shadow: none;
+        transition: border 300ms linear, color 300ms linear;
+        @include fontText2;
+        @include  media($mobile) {
+            width: 224px;
+            height: 36px;
+        }
+        @include  media($tablet) {
+            width: 156px;
+            height: 36px;
+        }
+        @include  media($desktop) {
+            width: 156px;
+            height: 32px;
+        }
+        @include media($large) {
+            width: 200px;
+            height: 40px;
+        }
+
+        &::placeholder {
+            color: var(--ui-dark);
+            opacity: 0.5;
+        }
+
+        &:hover {
+            border: 1px solid var(--ui-gray);
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid var(--ui-white);
+            box-shadow: none;
+        }
+    }
+
+    .input-error {
+        border: 1px solid var(--ui-red);
+        color: var(--ui-red);
+    }
+
+    .form-icon {
+        position: absolute;
+        @include  media($mobile) {
+            right: 106px;
+            margin: 10px;
+        }
+        @include  media($tablet) {
+            right: 122px;
+        }
+        @include  media($desktop) {
+            margin: 8px;
+        }
+        @include media($large) {
+            margin: 12px
+        }
+    }
+
+    &__button {
+        @include  media($mobile) {
+            width: 96px;
+            height: 36px;
+        }
+        @include  media($tablet) {
+            width: 112px;
+            height: 36px;
+        }
+        @include  media($desktop) {
+            height: 32px;
+        }
+        @include media($large) {
+            height: 40px;
+        }
+    }
+
+    &__status-wrapper {
+        margin-top: 4px;
+        height: 16px;
+        color: var(--ui-red);
+        @include fontButton;
+    }
+}
+
+.isHeader {
+    @include media($mobile) {
+        width: 152px;
+    }
+    @include media($tablet) {
+        width: 168px;
+    }
+    @include media($desktop) {
+        width: 152px;
+        margin: 0 36px;
+    }
+
+    .PromoCode__input {
+        width: 100%;
+        height: 32px;
+        padding-right: 34px;
+        margin: 0;
+
+        @include media($desktop) {
+            height: 36px;
+        }
+        background: var(--ui-gray-hover);
+    }
+
+    .PromoCode__form {
+        margin: 0;
+
+        @include media($desktop) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-promo-code {
+            color: var(--ui-red);
+            @include  fontButtonCode;
+        }
+    }
+
+    .header-submit-btn {
+        position: absolute;
+        width: 18px;
+        height: 32px;
+        right: 12px;
+        padding: 0;
+        z-index: 1;
+        @include media($tablet) {
+            height: 34px;
+        }
+        @include media($desktop) {
+            height: 36px;
+        }
+        @include media($large) {
+            height: 38px;
+        }
+    }
+
+    .enter-promo-code {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        @include  fontButtonCode;
+
+        @include media($desktop) {
+            height: max-content;
+        }
+
+        .promo-image {
+            margin-right: 12px;
+        }
+    }
+
+    .active {
+        color: var(--ui-red);
+    }
+}

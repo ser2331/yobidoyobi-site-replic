@@ -1,0 +1,76 @@
+@import "../../assets/styles/mixins/mixins";
+
+.LegalDocumentsContent {
+    .disPadding {
+        padding-bottom: 0;
+    }
+    &__name {
+        text-align: center;
+        @include fontTitle5;
+        @include media($mobile) {
+            margin: 32px 0 40px;
+        }
+        @include media($tablet) {
+            margin: 40px 0 28px;
+        }
+
+        @include media($desktop) {
+            margin: 44px 0 20px;
+        }
+        @include media($large) {
+            margin: 37px 0 28px;
+        }
+
+    }
+
+    &__documents-cart {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        box-shadow: 0 4px 12px rgba(36, 62, 72, 0.16);
+        margin:0 auto 40px;
+        @include media($mobile) {
+            width: $mobile;
+            padding:24px 0 8px;
+            margin-top: 40px;
+        }
+        @include media($tablet) {
+            width: $tablet;
+            margin-top: 28px;
+        }
+
+        @include media($desktop) {
+            width: $desktop;
+            padding: 28px 0 12px;
+            margin-top: 20px;
+        }
+        @include media($large) {
+            width: $large;
+            padding:24px 0 8px;
+            margin-top: 28px;
+        }
+
+        .documents-wrapper {
+            margin-left: 24px;
+
+            .document {
+                display: flex;
+                margin-bottom: 16px;
+                @include fontTitle2;
+
+                svg {
+                    margin-right: 8px;
+
+                    @include media($large) {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 12px;
+                    }
+                }
+                a {
+                    color: var(--ui-dark);
+                }
+            }
+        }
+    }
+}

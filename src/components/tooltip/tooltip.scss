@@ -1,0 +1,19 @@
+@import "../../assets/styles/mixins/mixins";
+
+.tooltip-icon {
+    & svg {
+
+        @include media($tablet) {
+            width: 24px;
+            height: 24px;
+        }
+        @include media($desktop) {
+            width: 16px;
+            height: 16px;
+        }
+        @include media($large) {
+          width: 20px;
+          height: 20px;
+        }
+    }
+}

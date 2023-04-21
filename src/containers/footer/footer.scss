@@ -1,0 +1,426 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Footer {
+    background: var(--ui-eggplant);
+
+    .Mailing {
+        @include media($tablet) {
+            width: 100%;
+            margin-top: 48px;
+        }
+        @include media($desktop) {
+            width: 384px;
+            padding: 12px 20px;
+            margin-top: 0;
+        }
+
+        &__input {
+            @include media($tablet) {
+                width: 504px;
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include media($mobile) {
+            flex-flow: column nowrap;
+        }
+        @include media($tablet) {
+            flex-flow: row nowrap;
+            padding-top: 28px;
+        }
+        @include media($desktop) {
+            padding-top: 16px;
+        }
+        @include media($large) {
+            padding-top: 28px;
+        }
+
+        .Logo {
+            &__img svg {
+                margin-bottom: 12px;
+            }
+        }
+
+        .right-container {
+            display: flex;
+            flex-flow: column-reverse nowrap;
+
+            .Footer__contacts {
+                @include media($mobile) {
+                    width: 100%;
+                    margin-top: 24px;
+                }
+                @include media($tablet) {
+                    width: auto;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .left-container {
+            display: flex;
+            flex-flow: column nowrap;
+            @include media($mobile) {
+                width: 100%;
+            }
+            @include media($tablet) {
+                flex: 1 1;
+
+                .inverse {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    width: 100%;
+                    .Logo__description {
+                        width: 100%;
+                    }
+                }
+            }
+
+
+            .foot {
+                display: flex;
+                flex-flow: row nowrap;
+
+                @include media($mobile) {
+                    justify-content: space-between;
+                    margin-top: 0;
+                }
+                @include media($tablet) {
+                    margin-top: 20px;
+                    width: 412px;
+                }
+
+                .Footer__routes {
+                    margin-right: 16px;
+                    @include media($tablet) {
+                        display: flex;
+                        flex-flow: row wrap;
+                        width: 100%;
+                        margin-right: 0;
+                    }
+
+                    .Footer__route {
+                        margin-top: 16px;
+
+                        @include media($tablet) {
+                            width: 90px;
+                            margin-right: 30px;
+                            margin-bottom: 0;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                .Footer__links {
+                    .Footer__link {
+                        margin-top: 16px;
+
+                        @include media($tablet) {
+                            width: max-content;
+                            margin-right: 22px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            margin-bottom: 12px;
+            @include media($tablet) {
+                padding-top: 44px;
+            }
+            @include media($desktop) {
+                padding-top: 12px;
+            }
+            @include media($large) {
+                padding-top: 48px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &:nth-child(3) {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            background: var(--ui-darkest);
+            @include media($mobile) {
+                width: auto;
+                height: 68px;
+                margin: 0 -16px -12px;
+            }
+            @include media($tablet) {
+                margin: 24px 0 20px;
+                padding: 0;
+                height: 64px;
+                background: none;
+            }
+            @include media($desktop) {
+                padding: 12px 28px;
+                height: 40px;
+                margin: 0 -28px -12px;
+                background: var(--ui-darkest);
+            }
+            @include media($large) {
+                padding: 20px 40px;
+                height: 60px;
+                margin: 0 -40px -12px;
+            }
+        }
+    }
+
+    &__routes,
+    &__links {
+        @include fontButton;
+    }
+
+    &__route *,
+    &__link *,
+    &__tel * {
+        color: var(--ui-white);
+        transition: opacity 300ms linear;
+
+        &:hover {
+            opacity: .5;
+            color: var(--ui-white);
+            cursor: pointer;
+        }
+
+        &:active {
+            opacity: 1;
+            color: var(--ui-white);
+        }
+    }
+
+    &__route:not(:last-child),
+    &__link:not(:last-child),
+    &__tel,
+    &__address {
+        margin-bottom: 8px;
+
+        @include media($large) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__contacts {
+        color: var(--ui-white);
+    }
+
+    &__tel a {
+        @include fontTitle6;
+    }
+
+    &__address {
+        @include fontTitle1;
+        .address {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__current-status {
+        @include fontText1;
+    }
+
+    &__map a {
+        color: var(--ui-white);
+    }
+
+    &__map {
+        opacity: .5;
+        user-select: none;
+        transition: opacity 300ms linear;
+        @include fontButton;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+
+    .social-menu {
+        justify-content: space-between;
+        @include media($mobile) {
+            margin: 20px 0 24px;
+        }
+        @include media($tablet) {
+            align-items: flex-start;
+            height: max-content;
+        }
+    }
+
+    .social-links {
+        @include media($tablet) {
+            background: var(--ui-darkest);
+            height: 64px;
+            align-items: center;
+            margin: 20px -20px 0px;
+            padding: 0 20px;
+        }
+        .right-zone {
+            @include media($mobile) {
+                width: 204px;
+                margin-top: 0;
+            }
+        }
+
+        .left-zone {
+            flex-shrink: 0;
+            @include media($mobile) {
+                margin-left: 16px;
+            }
+            @include media($tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .left-zone {
+        display: flex;
+        align-items: center;
+        @include media($mobile) {
+            flex-flow: column nowrap;
+        }
+        @include media($desktop) {
+            width: auto;
+            flex-flow: row nowrap;
+        }
+
+        .systems {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+
+            @include media($mobile) {
+                justify-content: space-around;
+            }
+            @include media($tablet) {
+                justify-content: normal;
+            }
+            .store-icon {
+                svg {
+                    @include media($mobile) {
+                        width: 156px;
+                        height: 48px;
+                    }
+                    @include media($tablet) {
+                        width: 162px;
+                        height: 48px;
+                    }
+                }
+            }
+        }
+
+        .store-icon > div {
+            display: flex;
+            margin-right: 12px;
+        }
+
+        .profit {
+            color: var(--ui-white);
+            opacity: 0.5;
+            @include fontMiniText;
+            margin-top: 12px;
+            @include media($tablet) {
+                max-width: 424px;
+            }
+            @include media($desktop) {
+                max-width: 600px;
+                margin-right: 24px;
+                margin-top: 0;
+            }
+            @include media($large) {
+                margin-right: 136px;
+            }
+        }
+    }
+
+    .right-zone {
+        @include media($mobile) {
+            width: 100%;
+            margin-top: 24px;
+        }
+        @include media($tablet) {
+            width: 272px;
+            margin-top: 0;
+        }
+        @include media($desktop) {
+            width: 384px;
+        }
+        @include media($large) {
+            width: 400px;
+        }
+
+        .SocialLinks {
+            @include media($tablet) {
+                justify-content: flex-end;
+            }
+            @include media($desktop) {
+                justify-content: normal;
+            }
+        }
+
+        .payment-title {
+            color: var(--ui-white);
+            @include fontTitle1;
+            @include media($tablet) {
+                margin-bottom: 8px;
+            }
+        }
+
+        .payment-icons {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            margin-top: 8px;
+
+            .payment-icon:not(:last-child) {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .corp {
+        color: var(--ui-white);
+        @include fontTitle1;
+    }
+
+    .SocialLinks {
+        justify-content: center;
+        &__item-wrapper {
+            opacity: .5;
+
+            svg {
+                @include media($mobile) {
+                    width: 28px;
+                    height: 28px;
+                }
+                @include media($tablet) {
+                    width: 24px;
+                    height: 24px;
+                }
+                @include media($desktop) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+
+            path {
+                fill: var(--ui-white);
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.gadget-footer {
+    padding-bottom: 0 !important;
+}

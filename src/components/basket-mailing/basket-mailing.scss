@@ -1,0 +1,128 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketMailing {
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        @include fontTitleButton;
+
+        @include media($mobile) {
+            flex-flow: column nowrap;
+        }
+        @include media($tablet) {
+            flex-flow: row nowrap;
+        }
+    }
+
+    &__content {
+        display: flex;
+        margin-bottom: 24px;
+        @include media($mobile) {
+            flex-flow: column nowrap;
+        }
+        @include media($tablet) {
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        @include media($desktop) {
+            justify-content: space-between;
+        }
+    }
+
+    &__description {
+        @include fontTitle1;
+
+        @include media($mobile) {
+            margin: 12px 0;
+        }
+        @include media($tablet) {
+            margin: 0;
+
+        }
+
+    }
+
+    .Mailing {
+        padding: 0;
+        border-radius: unset;
+        background: unset;
+        @include media($mobile) {
+            width: 328px;
+        }
+        @include media($tablet) {
+            width: 384px;
+        }
+        @include media($desktop) {
+            width: 360px;
+        }
+        @include media($large) {
+            width: 417px;
+        }
+
+        &__title {
+            display: none;
+        }
+
+        &__input {
+            background: var(--ui-gray-tertiary);
+            @include media($large) {
+                flex-basis: 240px;
+                height: 40px;
+            }
+
+            &:hover {
+                box-shadow: unset;
+            }
+        }
+
+        .form-icon {
+            position: absolute;
+            @include media($mobile) {
+                right: 148px;
+                top: 8px;
+            }
+            @include media($tablet) {
+                right: 156px;
+                top: 10px;
+            }
+            @include media($desktop) {
+                right: 132px;
+                top: 8px;
+            }
+            @include media($large) {
+                right: 188px;
+                top: 10px;
+            }
+
+            svg {
+                @include media($mobile) {
+                    width: 16px;
+                    height: 16px;
+                }
+                @include media($large) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        &__button {
+            background: var(--ui-gray-hover);
+            @include media($large) {
+                flex-basis: 169px;
+            }
+
+            &.subscribed {
+                background: var(--ui-green);
+                color: var(--ui-white);
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+
+        &__promotions {
+            color: var(--ui-dark);
+        }
+    }
+}

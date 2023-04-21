@@ -1,0 +1,13 @@
+@import "../../assets/styles/mixins/mixins";
+
+.Home {
+    @include media($tablet) {
+        padding-bottom: 52px;
+    }
+    @include media($desktop) {
+        padding-bottom: 44px;
+    }
+    @include media($large) {
+        padding-bottom: 60px;
+    }
+}

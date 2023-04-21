@@ -1,0 +1,56 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BirthdayModal {
+  @include media($mobile) {
+    width: 288px;
+  }
+  @include media($tablet) {
+    width: 398px;
+  }
+  @include media($desktop) {
+    width: 320px;
+  }
+  @include media($large) {
+    width: 420px;
+  }
+
+  &__wrap {
+    .ant-modal-body {
+      padding: 48px 20px;
+    }
+  }
+  .modal-title {
+    margin: 0;
+  }
+
+  &__description-wrapper {
+    margin: 20px 0;
+
+    .description {
+      @include fontText2;
+      color: var(--ui-dark);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .attention {
+      @include fontText1;
+      color: var(--ui-red);
+      text-align: center;
+    }
+  }
+
+  &__buttons {
+    .gift-button {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__buttons > * {
+    height: 32px;
+
+    @include media($large) {
+      height: 36px;
+    }
+  }
+}

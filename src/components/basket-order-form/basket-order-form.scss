@@ -1,0 +1,455 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketOrderForm {
+    flex-grow: 1;
+    padding-bottom: 24px;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .group-button {
+        display: flex;
+        justify-content: flex-end;
+        @include media($mobile) {
+            margin-top: -10px;
+            height: 16px;
+            justify-content: space-between;
+        }
+        @include media($tablet) {
+            margin: 10px 92px 0 0;
+            justify-content: flex-end;
+        }
+        @include media($desktop) {
+            margin-right: 24px;
+        }
+        @include media($large) {
+            margin-right: 84px;
+            height: 20px;
+        }
+
+        .btn-change {
+            width: auto;
+            height: 16px;
+            @include media($mobile) {
+                padding-left: 0;
+            }
+            @include media($tablet) {
+                padding-left: 6px;
+                margin-right: 20px;
+            }
+        }
+
+        .timer-container {
+            width: 25px;
+            margin-left: 5px;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+    }
+
+    &__field-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        @include media($mobile) {
+            align-items: normal;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        @include media($tablet) {
+            align-items: center;
+            flex-direction: row;
+            margin-top: 24px;
+            margin-bottom: 0;
+
+        }
+        @include media($desktop) {
+            margin-top: 20px;
+        }
+        @include media($large) {
+            margin-top: 24px;
+        }
+
+        .name-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            .field {
+                border: 1px solid var(--ui-white);
+                box-shadow: none;
+                transition: border 300ms linear, color 300ms linear;
+            }
+
+            .error {
+                border: 1px solid var(--ui-red);
+                background: var(--ui-white);
+            }
+
+            .form-icon {
+                position: absolute;
+                right: 12px;
+            }
+        }
+
+        .error-name {
+            color:  var(--ui-red);
+            position: absolute;
+            top: 34px;
+            left: 12px;
+            @include fontText1;
+        }
+
+        .persons-quantity {
+            @include media($mobile) {
+                width: 328px;
+                height: 32px;
+            }
+            @include media($tablet) {
+                width: 508px;
+            }
+            @include media($desktop) {
+                width: 400px;
+            }
+            @include media($large) {
+                width: 500px;
+                height: 36px;
+            }
+        }
+
+        .select-time {
+            padding: 0;
+
+            .ant-select-selection-item {
+                display: flex;
+                align-items: center;
+                @include media($large) {
+                    height: 36px;
+                }
+            }
+        }
+
+        label {
+            @include fontTitle1;
+            font-weight: 400;
+
+            @include media($mobile) {
+                margin-bottom: 12px;
+            }
+        }
+
+        .group-field {
+            display: flex;
+            justify-content: space-between;
+            @include media($mobile) {
+                width: 328px;
+                height: 32px;
+            }
+            @include media($tablet) {
+                width: 508px;
+                height: 32px;
+            }
+            @include media($desktop) {
+                width: 400px;
+                height: 32px;
+            }
+            @include media($large) {
+                width: 500px;
+                height: 36px;
+            }
+
+            .left, .right {
+                display: flex;
+
+                .confirmation-left {
+                    position: absolute;
+                    width: 18px;
+                    padding: 0;
+                    z-index: 1;
+                    @include media($mobile) {
+                        margin-left: 132px;
+                        height: 32px;
+                    }
+                    @include media($tablet) {
+                        margin-left: 230px;
+                        height: 32px;
+                    }
+                    @include media($desktop) {
+                        margin-left: 190px;
+                        height: 32px;
+                    }
+                    @include media($large) {
+                        margin-left: 258px;
+                        height: 36px;
+                    }
+                }
+
+                .active {
+                    color: var(--ui-red);
+                }
+
+                .confirmation-right {
+                    position: absolute;
+                    width: 18px;
+                    padding: 0;
+                    z-index: 1;
+                    @include media($mobile) {
+                        margin-left: 132px;
+                        height: 32px;
+                    }
+                    @include media($tablet) {
+                        margin-left: 200px;
+                        height: 32px;
+                    }
+                    @include media($desktop) {
+                        margin-left: 138px;
+                        height: 32px;
+                    }
+                    @include media($large) {
+                        margin-left: 170px;
+                        height: 36px;
+                    }
+
+                    svg {
+                        margin-top: 8px;
+                        width: 16px;
+                        height: 16px;
+
+                        @include media($large) {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+            .InputMask {
+                opacity: 1;
+                color: var(--ui-dark-half);
+                transition: color 300ms linear;
+                @include fontText2;
+                @include media($mobile) {
+                    width: 158px;
+                    padding: 8px 32px 8px 12px;
+                }
+                @include media($tablet) {
+                    width: 264px;
+                    padding: 8px 84px 8px 12px;
+                }
+                @include media($desktop) {
+                    width: 220px;
+                    padding-right: 40px;
+                }
+                @include media($large) {
+                    width: 288px;
+                    padding-right: 108px;
+                }
+
+                &:focus {
+                    color: var(--ui-dark);
+                }
+            }
+
+            .code {
+                padding: 8px 40px 8px 12px;
+                border: 1px solid var(--ui-gray-hover);
+                transition: border 300ms linear;
+                @include media($mobile) {
+                    width: 158px;
+                    padding: 8px 32px 8px 12px;
+                }
+                @include media($tablet) {
+                    width: 232px;
+                }
+                @include media($desktop) {
+                    width: 168px;
+                }
+                @include media($large) {
+                    width: 200px;
+                }
+            }
+
+            .error {
+                border: 1px solid var(--ui-red);
+                background: var(--ui-white);
+            }
+
+            .disable {
+                color: #7C909C;
+            }
+        }
+
+        .right-container {
+            display: flex;
+
+            .payment-methods {
+                @include media($desktop) {
+                    margin-top: 8px;
+                }
+            }
+
+            .group-checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 188px;
+                margin-bottom: 8px;
+                @include media($tablet) {
+                    width: 188px;
+                    margin-bottom: 8px;
+                }
+                @include media($desktop) {
+                    width: 188px;
+                    margin-bottom: 16px;
+                }
+                @include media($large) {
+                    width: 213px;
+                    margin-bottom: 22px;
+                }
+
+                .RowButton {
+                    @include fontTitle1;
+                    font-weight: 400;
+                    padding: 0;
+                    text-align: left;
+                    @include media($tablet) {
+                        width: 160px;
+                        height: 32px;
+                    }
+                    @include media($desktop) {
+                        width: 156px;
+                        height: 16px;
+                    }
+                    @include media($large) {
+                        width: 184px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .change-in {
+                @include media($tablet) {
+                    width: 320px;
+                }
+                @include media($desktop) {
+                    width: 212px;
+                }
+                @include media($large) {
+                    width: 284px;
+                }
+
+                input {
+                    @include media($mobile) {
+                        width: 120px;
+                        margin-left: 12px;
+                    }
+                    @include media($tablet) {
+                        width: 308px;
+                    }
+                    @include media($desktop) {
+                        width: 200px;
+                    }
+                    @include media($large) {
+                        width: 260px;
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+
+        .checkbox {
+            align-items: flex-start;
+
+            .group-checkbox, label {
+                @include media($tablet) {
+                    margin-top: 0;
+                }
+                @include media($desktop) {
+                    margin-top: 6px;
+                }
+                @include media($large) {
+                    margin-top: 6px;
+                }
+            }
+
+            label {
+                @include media($tablet) {
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        .right-container {
+            @include media($mobile) {
+                justify-content: space-between;
+            }
+            @include media($tablet) {
+                justify-content: normal;
+            }
+
+            .CustomCheckbox {
+                @include media($mobile) {
+                    margin-right: 12px;
+                    padding: 0 6px;
+                }
+            }
+        }
+
+        .add-address-container {
+            display: flex;
+
+            .field {
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                @include media($mobile) {
+                    padding-right: 112px;
+                }
+                @include media($tablet) {
+                    padding-right: 124px;
+                }
+                @include media($desktop) {
+                    padding-right: 110px;
+                }
+                @include media($large) {
+                    padding-right: 124px;
+                }
+            }
+
+            .add-address {
+                position: absolute;
+                padding: 0;
+                color: var(--ui-red);
+                white-space: nowrap;
+                width: auto;
+                right: 12px;
+                @include media($mobile) {
+                    height: 32px;
+                }
+                @include media($large) {
+                    height: 36px;
+                }
+            }
+        }
+    }
+
+    .comment-wrapper {
+        .comment {
+            height: 128px;
+            resize: none;
+            margin-bottom: 0;
+        }
+    }
+
+    .captcha-wrapper {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+    }
+}

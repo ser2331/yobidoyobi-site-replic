@@ -1,0 +1,149 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProgressBar {
+    width: 100%;
+    background: var(--ui-violet);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    @include fontButton;
+    @include media($tablet){
+        height: 52px;
+    }
+    @include media($desktop){
+        height: 32px;
+    }
+    @include media($large){
+        height: 48px;
+    }
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 100;
+        @include media($tablet){
+            padding-left: 8px;
+        }
+        @include media($desktop){
+            padding-left: 28px;
+        }
+        @include media($large){
+            padding-left: 40px;
+        }
+
+        .gift-icon {
+            margin-right: 4px;
+
+            @include media($desktop) {
+                margin-right: 12px;
+            }
+
+            & > div {
+                display: flex;
+            }
+            @include media($tablet){
+                & svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            @include media($desktop){
+                & svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            @include media($large){
+                & svg {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+
+        .title {
+            color: var(--ui-white);
+
+            @include media($tablet) {
+                width: min-content;
+                margin-right: 6px;
+            }
+            @include media($desktop) {
+                width: max-content;
+                margin-right: 24px;
+            }
+        }
+
+        .link {
+            color: var(--ui-white);
+            opacity: .5;
+            transition: opacity 300ms linear;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__bar {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        background: var(--ui-red-secondary);
+        transition: width 1s linear;
+    }
+
+    &__points {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__point {
+        position: absolute;
+        bottom: 0;
+        transform: translateX(-50%);
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        opacity: .5;
+        transition: opacity 300ms linear;
+
+        .point-title {
+            color: var(--ui-white);
+            margin-bottom: 2px;
+        }
+
+        .point-sign {
+            width: 4px;
+            height: 6px;
+            border-radius: 2px 2px 0 0;
+            background: var(--ui-white);
+
+            @include media($tablet){
+                height: 14px;
+            }
+            @include media($desktop){
+                height: 4px;
+            }
+            @include media($large){
+                height: 12px;
+            }
+        }
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

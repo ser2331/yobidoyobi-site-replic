@@ -1,0 +1,67 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketItems {
+    &__title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+
+    &__title-main {
+        @include fontTitle5;
+    }
+
+    .basket-divider {
+        @include media($mobile) {
+            margin-top: 20px;
+        }
+        @include media($tablet) {
+            margin-top: 12px;
+        }
+    }
+
+    &__title-clear {
+        opacity: .5;
+        transition: opacity 300ms;
+        width: auto;
+        height: auto;
+        padding: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__items {
+        margin-bottom: 24px;
+    }
+
+    &__empty {
+        width: 100%;
+        height: 84px;
+        border-radius: 8px;
+        background: var(--ui-gray-tertiary);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+            @include fontTitleButton;
+            opacity: .5;
+            margin-bottom: 10px;
+        }
+
+        .go-home-button {
+            padding: 0;
+            height: auto;
+            width: auto;
+            transition: color 300ms linear;
+
+            &:hover {
+                color: var(--ui-dark-hover);
+            }
+        }
+    }
+}

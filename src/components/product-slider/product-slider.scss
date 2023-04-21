@@ -1,0 +1,59 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProductSlider {
+    &__content-wrapper {
+        overflow: hidden;
+        @include media($tablet) {
+            height: 240px;
+        }
+
+        .slick-slide {
+            padding: 0 6px;
+        }
+
+        .slick-arrow {
+            height: 100%;
+            z-index: 100;
+            top: 0;
+            transform: none;
+
+            @include media($tablet) {
+                width: 52px;
+            }
+            @include media($desktop) {
+                width: 100px;
+            }
+
+            &:hover {
+                cursor: default;
+            }
+        }
+
+        .slick-next {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--ui-white) 100%);
+            right: 0;
+
+            &:before {
+                content: '';
+            }
+
+            &:hover, &:focus {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--ui-white) 100%);
+            }
+        }
+
+        .slick-prev {
+            background: linear-gradient(90deg, var(--ui-white) 0%, rgba(255, 255, 255, 0) 100%);
+            left: 0;
+            transform: translateY(-1px);
+
+            &:before {
+                content: '';
+            }
+
+            &:hover, &:focus {
+                background: linear-gradient(90deg, var(--ui-white) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+}

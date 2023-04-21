@@ -1,0 +1,54 @@
+@import "../../assets/styles/mixins/mixins";
+
+.SocialLinks {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 32px;
+
+    @include media($large) {
+        height: 40px;
+    }
+
+    &__item-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        transition: all 300ms linear;
+
+        div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            background: rgba(73, 121, 154, .2);
+        }
+
+        &:active {
+            background: transparent;
+
+            path {
+                transition: fill 300ms linear;
+                fill: rgba(73, 121, 154, .5);
+            }
+        }
+
+        svg {
+            @include media($large) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__item-wrapper:not(:last-child) {
+        margin-right: 16px;
+    }
+}

@@ -1,0 +1,179 @@
+@import "../../assets/styles/mixins/mixins";
+
+.CitySelector {
+    &__selected {
+        display: flex;
+        flex-flow: row nowrap;
+        color: var(--ui-dark);
+        transition: color 300ms linear;
+        user-select: none;
+        @include fontButton;
+
+        @include media($desktop) {
+            margin-bottom: 0px;
+
+        }
+        @include media($large) {
+            margin-bottom: 4px;
+
+        }
+
+        .selector-icon {
+            margin-left: 4px;
+
+            path {
+                transition: stroke 300ms linear;
+            }
+        }
+
+        &:hover {
+            color: var(--ui-dark-hover);
+            cursor: pointer;
+
+            path {
+                stroke: var(--ui-dark-hover);
+            }
+        }
+    }
+
+    &__stats {
+        display: flex;
+        user-select: none;
+        @include media($mobile) {
+            justify-content: space-between;
+            width: auto;
+        }
+        @include media($tablet) {
+            justify-content: flex-start;
+            width: max-content;
+        }
+
+        .delivery-time {
+            @include media($mobile) {
+                color: var(--ui-white);
+                @include fontTitle2;
+            }
+            @include media($tablet) {
+                margin-right: 80px;
+                color: var(--ui-white);
+                @include fontTitle4;
+            }
+            @include media($desktop) {
+                margin-right: 12px;
+                color: var(--ui-dark);
+                @include fontTitle1;
+            }
+        }
+
+        .rating {
+            display: flex;
+            color: var(--ui-gold);
+
+            @include media($mobile) {
+                @include fontTitle2;
+            }
+            @include media($tablet) {
+                @include fontTitle5;
+            }
+            @include media($desktop) {
+                color: var(--ui-dark);
+                @include fontButton;
+            }
+
+            .rate-city {
+                @include media($mobile) {
+                    margin-left: 12px;
+                }
+                @include media($desktop) {
+                    margin-left: 6px;
+                }
+
+                svg {
+                    @include media($mobile) {
+                        width: 12px;
+                        height: 12px;
+                        margin-top: -2px;
+                        padding: 0;
+                    }
+                    @include media($tablet) {
+                        width: 28px;
+                        height: 28px;
+                        margin-top: -6px;
+                        padding: 0;
+                    }
+                    @include media($desktop) {
+                        width: 8px;
+                        height: 8px;
+                        margin-top: -2px;
+                    }
+                    @include media($large) {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__stats-tooltip {
+        .tooltip-inner {
+            width: 320px;
+            padding: 4px 0;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            @include media($large) {
+                width: 363px;
+            }
+        }
+
+        .left-zone,
+        .right-zone {
+            width: 152px;
+        }
+
+        .left-zone {
+            @include media($large) {
+                width: 191px;
+            }
+        }
+
+        .title {
+            @include fontTitle3;
+            height: 24px;
+            color: var(--ui-white);
+            margin-bottom: 4px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+
+        .right-zone .title {
+            color: var(--ui-gold);
+        }
+
+        .subtitle,
+        .description {
+            @include fontText1;
+            color: var(--ui-white);
+            margin-bottom: 4px;
+        }
+
+        .description {
+            opacity: .5;
+        }
+
+        .ant-rate {
+            margin-left: 10px;
+        }
+
+        .ant-rate-star-second {
+            color: var(--ui-dark-hover);
+        }
+    }
+}

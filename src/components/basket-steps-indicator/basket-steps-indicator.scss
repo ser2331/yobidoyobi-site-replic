@@ -1,0 +1,9 @@
+.BasketStepsIndicator {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    &__divider {
+        margin: 0 4px;
+    }
+}

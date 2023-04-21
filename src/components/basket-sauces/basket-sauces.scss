@@ -1,0 +1,14 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketSauces {
+
+    &__items {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+    }
+
+    &__title {
+        @include fontTitleButton;
+    }
+}

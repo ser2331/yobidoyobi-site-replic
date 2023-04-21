@@ -1,0 +1,106 @@
+@import "../../assets/styles/mixins/mixins";
+
+.SauceItem {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    &__img-wrapper {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--ui-white);
+        border-radius: 4px;
+        user-select: none;
+        @include media($mobile) {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 8px;
+        }
+        @include media($tablet) {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 12px;
+        }
+        @include media($desktop) {
+            height: 74px;
+        }
+        @include media($large) {
+            height: 80px;
+        }
+    }
+
+    &__title,
+    &__weight {
+        @include media($mobile) {
+            margin-bottom: 8px;
+        }
+        @include media($tablet) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__title-wrapper {
+        width: 208px;
+        padding: 1rem;
+
+        .title {
+            text-align: center;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+            height: 2.9em;
+            @include fontTitleButton;
+        }
+
+    }
+
+    &__weight {
+        @include fontText1;
+    }
+
+    &__price {
+        user-select: none;
+
+        @include media($mobile) {
+            margin-top: 8px;
+        }
+        @include media($tablet) {
+            margin-top: 12px;
+        }
+        @include fontButton
+    }
+
+    .BasketCounter {
+        @include media($mobile) {
+            width: 100px;
+            height: 36px;
+        }
+        @include media($desktop) {
+            width: 80px;
+            height: 32px;
+        }
+        @include media($large) {
+            width: 88px;
+            height: 36px;
+        }
+
+        &__count {
+            color: var(--ui-dark);
+        }
+
+        &__minus-icon path {
+            stroke: var(--ui-dark);
+        }
+
+        &__plus-icon path {
+            fill: var(--ui-dark);
+        }
+    }
+}

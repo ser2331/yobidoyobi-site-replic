@@ -1,0 +1,61 @@
+@import "../../assets/styles/mixins/mixins";
+
+.StocksContent {
+    &__name {
+        text-align: center;
+        @include fontTitle5;
+        margin-top: 36px;
+        margin-bottom: 20px;
+    }
+
+    &__carts {
+        .ant-col-4 {
+            flex: 0 0 19%;
+            max-width: 19%;
+        }
+    }
+
+    &__cart {
+        padding: 12px;
+        box-shadow: 0 4px 12px rgba(36, 62, 72, 0.16);
+        border-radius: 4px;
+        .stock-image {
+            img {
+                width: 304px;
+                height: 160px;
+            }
+        }
+        .stock-title {
+            margin-top: 16px;
+        }
+        .stock-title, .stock-percent {
+            width: 100%;
+            text-align: left;
+            @include fontTitle2;
+        }
+
+        .cart-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 16px;
+
+            .stock-date {
+                @include media($mobile) {
+                    margin-right: 153px;
+                }
+                @include media($tablet) {
+                    margin-right: 38px;
+                }
+                @include media($desktop) {
+                    margin-right: 65px;
+                }
+                @include media($large) {
+                    margin-right: 58px;
+                }
+                @include fontText1;
+            }
+        }
+    }
+}

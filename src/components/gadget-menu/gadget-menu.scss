@@ -1,0 +1,178 @@
+@import "../../assets/styles/mixins/mixins";
+
+
+.GadgetMenu {
+
+    &__wrapper {
+        overflow: scroll;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+        color: var(--ui-white);
+
+        .ant-drawer-body {
+            padding: 0;
+            background-color: var(--ui-eggplant);
+        }
+    }
+
+    &__header {
+        padding: 4px 0;
+        background-color: var(--ui-violet);
+        @include media($mobile) {
+            margin: -12px -16px 0;
+        }
+        @include media($tablet) {
+            margin: -12px -20px 0;
+        }
+
+        .header-gadget {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .right-zone {
+                width: 48px;
+                height: 48px;
+                border: none;
+                padding: 0;
+                background-color: var(--ui-violet)
+            }
+        }
+    }
+
+    &__city-sign {
+        display: flex;
+        flex-flow: row nowrap;
+        padding-top: 28px;
+
+        .pointer-icon {
+            justify-content: center;
+            text-align: center;
+            margin-right: 20px;
+
+            svg {
+                @include media($mobile) {
+                    width: 28px;
+                    height: 28px;
+                }
+                @include media($tablet) {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .city {
+            @include fontTitle4;
+
+            .RowButton {
+                width: max-content;
+                height: 16px;
+                margin-top: 8px;
+                color: var(--ui-white);
+                opacity: .5;
+                padding: 0;
+            }
+        }
+    }
+
+    &__time {
+        margin-bottom: 16px;
+        @include fontTitle4;
+    }
+
+    .basket-divider {
+        background: var(--ui-violet);
+    }
+
+    &__foot {
+        font: 24/36px;
+
+        .routes,
+        .links {
+            font: 700 24px/36px 'Museo Sans Cyrl 700', sans-serif;
+
+            @include media($mobile) {
+                @include fontButton-Menu
+            }
+            @include media($tablet) {
+                font: 700 24px/36px 'Museo Sans Cyrl 700', sans-serif;
+            }
+        }
+
+        .route,
+        .link {
+            display: flex;
+            flex-flow: row nowrap;
+            margin-bottom: 12px;
+            padding: 10px 10px 10px 16px;
+
+            .title {
+                width: 100%;
+                -webkit-user-select: none;
+                opacity: 1;
+
+                .user-name-wrapper {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    opacity: 1;
+                    cursor: initial;
+                }
+            }
+
+            .auth {
+                &:active {
+                    opacity: 1;
+                }
+            }
+
+            .route-icon {
+                margin-right: 10px;
+
+                svg {
+                    @include media($mobile) {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    @include media($tablet) {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+            }
+        }
+
+        .route *,
+        .link * {
+            color: var(--ui-white);
+
+            &:active {
+                color: var(--ui-white);
+            }
+        }
+    }
+
+    &__systems {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        padding-bottom: 30px;
+
+        .store-icon {
+            svg {
+                @include media($mobile) {
+                    width: 162px;
+                    height: 48px;
+                }
+                @include media($tablet) {
+                    width: 324px;
+                    height: 94px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "../../../../assets/styles/mixins/mixins";
+
+.ProductIndicator {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    @include media($mobile) {
+        width: 16px;
+        height: 16px;
+        left: 4px;
+    }
+    @include media($tablet) {
+        width: 24px;
+        height: 24px;
+        left: 20px;
+    }
+    @include media($large) {
+        width: 28px;
+        height: 28px;
+    }
+
+    &__icon svg {
+
+        @include media($mobile) {
+            width: 16px;
+            height: 16px;
+        }
+        @include media($tablet) {
+            width: 24px;
+            height: 24px;
+        }
+        @include media($large) {
+            width: 28px;
+            height: 28px;
+        }
+
+        path {
+            fill: var(--ui-white);
+        }
+    }
+}

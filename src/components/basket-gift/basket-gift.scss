@@ -1,0 +1,41 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketGift {
+    &__wrapper {
+        width: 100%;
+        padding: 24px 0;
+        transition: background 300ms linear;
+    }
+
+    &__wrapper.unselectedGift {
+        background: rgba(245, 35, 65, 0.1);
+
+        .BasketGift__title {
+            color: var(--ui-red);
+        }
+    }
+
+    &__title {
+        @include fontTitleButton;
+        position: relative;
+        transition: color 300ms linear;
+    }
+
+    &__title-error {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__items {
+        @include media($mobile) {
+            padding: 0;
+        }
+        @include media($tablet) {
+            padding: 0 54px;
+        }
+        @include media($desktop) {
+            padding: 0 58px;
+        }
+    }
+}

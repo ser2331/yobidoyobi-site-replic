@@ -1,0 +1,49 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketSaucesModal {
+  @include media($mobile) {
+    width: 252px;
+  }
+  @include media($tablet) {
+    width: 580px;
+  }
+  .SauceItem__title-wrapper {
+    padding: 0;
+
+    @include media($mobile) {
+      width: 140px;
+    }
+    @include media($tablet) {
+      width: 185px;
+    }
+  }
+  &__wrap {
+    .close-button {
+      position: absolute;
+      width: 124px;
+      @include fontButton;
+      border-radius: 4px 4px 0 0;
+      transform: rotate(90deg);
+      right: -86px;
+      top: 60px;
+
+      @include media($mobile) {
+        height: 30px;
+        right: -78px;
+      }
+      @include media($tablet) {
+        height: 48px;
+        right: -86px;
+      }
+    }
+
+    .ant-modal-body {
+      @include media($mobile) {
+        padding: 48px 16px 48px;
+      }
+      @include media($tablet) {
+        padding: 48px 28px 48px;
+      }
+    }
+  }
+}

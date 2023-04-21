@@ -1,0 +1,251 @@
+@import "../variables/variables";
+@import "../fonts/fonts";
+
+$mobile: 360px;
+$tablet: 768px;
+$desktop: 1152px;
+$large: 1440px;
+
+@mixin media($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin fontTitle1 {
+    @include media($mobile) {
+        font: 300 12px/16px 'Museo Sans Cyrl 300', sans-serif;
+    }
+    @include media($tablet) {
+        font: 300 14px/16px 'Museo Sans Cyrl 300', sans-serif;
+    }
+    @include media($desktop) {
+        font: 300 12px/16px 'Museo Sans Cyrl 300', sans-serif;
+    }
+    @include media($large) {
+        font: 300 14px/20px 'Museo Sans Cyrl 300', sans-serif;
+    }
+}
+
+@mixin fontTitle2 {
+    @include media($mobile) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($large) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontTitle3 {
+    @include media($mobile) {
+        font: 700 16px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 20px/24px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 16px/24px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($large) {
+        font: 700 20px/24px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontTitle4 {
+    @include media($mobile) {
+        font: 500 20px/24px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 500 28px/32px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($desktop) {
+        font: 500 24px/32px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($large) {
+        font: 500 28px/36px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontTitle5 {
+    @include media($mobile) {
+        font: 700 20px/24px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 28px/32px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 24px/28px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($large) {
+        font: 700 28px/32px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontTitle6 {
+    font: 700 16px/20px 'Museo Sans Cyrl 700', sans-serif;
+
+    @include media($large) {
+        font: 700 20px/24px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontTitle7 {
+    @include media($mobile) {
+        font: 700 16px/20px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 20px/24px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontText1 {
+    @include media($mobile) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($desktop) {
+        font: 500 10px/12px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($large) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontText2 {
+    @include media($mobile) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 500 14px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($desktop) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($large) {
+        font: 500 14px/20px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontText3 {
+    @include media($mobile) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontText4 {
+    @include media($desktop) {
+        font: 300 10px/12px 'Museo Sans Cyrl 300', sans-serif;
+    }
+    @include media($large) {
+        font: 300 12px/16px 'Museo Sans Cyrl 300', sans-serif;
+    }
+}
+
+@mixin fontText5 {
+    @include media($mobile) {
+        font: 250 12px/16px 'Museo Sans Cyrl 100', sans-serif;
+    }
+    @include media($tablet) {
+        font: 250 14px/16px 'Museo Sans Cyrl 100', sans-serif;
+    }
+    @include media($desktop) {
+        font: 250 12px/16px 'Museo Sans Cyrl 100', sans-serif;
+    }
+    @include media($large) {
+        font: 250 14px/20px 'Museo Sans Cyrl 100', sans-serif;
+    }
+}
+
+@mixin fontButton {
+    @include media($mobile) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 14px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($large) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontTitleButton {
+    //text-transform: uppercase;
+    @include media($mobile) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($tablet) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($large) {
+        font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}
+
+@mixin fontButton-Menu {
+    @include media($mobile) {
+        font: 700 14px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+
+}
+
+@mixin fontMiniText {
+    @include media($mobile) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($desktop) {
+        font: 500 8px/12px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($large) {
+        font: 500 10px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontOnCalc {
+    @include media($mobile) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($tablet) {
+        font: 500 14px/20px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($desktop) {
+        font: 500 12px/16px 'Museo Sans Cyrl 500', sans-serif;
+    }
+    @include media($large) {
+        font: 500 14px/20px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontOnCalc2 {
+    @include media($tablet) {
+        font: 500 16px/20px 'Museo Sans Cyrl 500', sans-serif;
+    }
+}
+
+@mixin fontButtonCode {
+    @include media($mobile) {
+        font: 700 14px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+    @include media($desktop) {
+        font: 700 12px/16px 'Museo Sans Cyrl 700', sans-serif;
+    }
+}

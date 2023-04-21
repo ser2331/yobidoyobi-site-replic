@@ -1,0 +1,65 @@
+@import "../../assets/styles/mixins/mixins";
+
+.SleepModal {
+    @include media($mobile) {
+        width: 296px;
+    }
+    @include media($tablet) {
+        width: 360px;
+    }
+    @include media($desktop) {
+        width: 264px;
+    }
+    @include media($large) {
+        width: 320px;
+    }
+
+    &__wrap {
+        .ant-modal-body {
+            @include media($mobile) {
+                padding: 44px 16px;
+            }
+            @include media($tablet) {
+                padding: 56px 28px;
+            }
+            @include media($desktop) {
+                padding: 48px;
+            }
+            @include media($large) {
+                padding: 56px 48px 48px;
+            }
+        }
+    }
+
+    .sleep-icon {
+        margin-bottom: 20px;
+        @include media($large) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 12px;
+        @include fontTitle3;
+        @include media($large) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .description {
+        text-align: center;
+        margin-bottom: 20px;
+        @include fontText2;
+        @include media($large) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__submit {
+        height: 32px;
+        @include media($large) {
+            height: 36px;
+        }
+    }
+}

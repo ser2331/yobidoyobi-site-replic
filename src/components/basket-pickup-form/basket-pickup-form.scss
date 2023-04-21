@@ -1,0 +1,57 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketPickupForm {
+    &__content {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 24px;
+        @include fontTitle1;
+
+        @include media($mobile) {
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        @include media($tablet) {
+            flex-direction: row;
+            margin-top: 12px;
+        }
+    }
+    .modalContent {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__group-checkbox {
+        width: 100%;
+        @include media($tablet) {
+            width: 508px;
+        }
+        @include media($desktop) {
+            width: 400px;
+        }
+        @include media($large) {
+            width: 500px;
+        }
+
+        .one-checked-item {
+            display: flex;
+            align-items: center;
+            @include media($mobile) {
+                margin: 20px 0 4px;
+            }
+
+            .CustomCheckbox{
+                padding: 6px;
+            }
+
+            .RowButton {
+                width: 372px;
+                height: 16px;
+                padding: 0;
+                margin-left: 12px;
+                @include fontTitle1;
+            }
+        }
+    }
+}

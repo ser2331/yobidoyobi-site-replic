@@ -1,0 +1,14 @@
+@import "../../assets/styles/mixins/mixins";
+
+.BasketSelectMethod {
+
+    &__title {
+        margin: 24px 0 0;
+        color: #203842;
+        @include fontTitle5;
+    }
+
+    .basket-divider {
+        margin-bottom: 0;
+    }
+}

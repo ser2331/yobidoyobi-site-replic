@@ -1,0 +1,217 @@
+@import "../../assets/styles/mixins/mixins";
+.AddressModal__wrap {
+    input[type='number'] {
+        -moz-appearance:textfield;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    .ant-modal-body {
+        @include media($tablet) {
+            width: 496px;
+            padding: 48px;
+        }
+    }
+    .AddressModal {
+        @include media($mobile) {
+            width: 288px;
+        }
+        @include media($tablet) {
+            width: 400px;
+        }
+
+        &__header {
+            &__title {
+                display: flex;
+                justify-content: center;
+                margin: 24px 0 0;
+                color: #203842;
+                @include fontTitle5;
+            }
+
+            &__delivery-choice {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+            }
+
+            &__delivery {
+                width: auto;
+                height: auto;
+                color: var(--ui-gray-secondary);
+                transition: color 300ms;
+                padding: 0;
+                text-transform: uppercase;
+                align-items: flex-start;
+
+                @include media($mobile) {
+                    font: 700 14px/20px 'Museo Sans Cyrl 700', sans-serif;
+                }
+                @include media($tablet) {
+                    @include fontTitleButton;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.active {
+                    color: var(--ui-red);
+                }
+            }
+
+            &__or {
+                margin: 0 8px;
+                @include fontText2;
+                color: var(--ui-gray);
+            }
+
+            .basket-divider {
+                margin-bottom: 0;
+            }
+        }
+
+        .FormAddAddress-content {
+            @include media($mobile) {
+                margin: 20px 0;
+            }
+            @include media($tablet) {
+                margin: 16px 0;
+            }
+            .auto-complete-wrapper {
+                width: 100%;
+            }
+            .field {
+                margin: 4px 0;
+                @include media($mobile) {
+                    width: 288px;
+                    height: 32px;
+                }
+                @include media($tablet) {
+                    width: 400px;
+                }
+                @include media($large) {
+                    height: 36px;
+                }
+            }
+
+            .home-group {
+                display: flex;
+                justify-content: space-between;
+
+                .field {
+                    @include media($mobile) {
+                        width: 140px;
+                    }
+                    @include media($tablet) {
+                        width: 196px;
+                    }
+                }
+            }
+
+            .comment-address {
+                height: 128px;
+                resize: none;
+                margin-bottom: 0;
+            }
+
+            .group-field {
+                display: flex;
+                justify-content: space-between;
+
+                @include media($mobile) {
+                    flex-wrap: wrap;
+                }
+                @include media($tablet) {
+                    flex-wrap: nowrap;
+                }
+
+                .field {
+                    @include media($mobile) {
+                        width: 140px;
+                    }
+                    @include media($tablet) {
+                        width: 94px;
+                    }
+                }
+
+            }
+        }
+        .AuthModal__submit-code {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+}
+
+.dropdown-auto-complete-wrapper {
+    .ant-select-item-option-content {
+        white-space: normal !important;
+    }
+}
+
+.UserAddresses {
+    &__user-addresses-list {
+        width: 100%;
+        .user-addresses {
+            .address-name-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .address-name {
+                    display: flex;
+                    align-items: center;
+                    .name-wrapper {
+                        @include media($mobile) {
+                            max-width: 210px;
+                        }
+                        @include media($tablet) {
+                            max-width: 300px;
+                        }
+                        .name {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            padding: 5px;
+                            text-overflow: ellipsis;
+                            margin-left: 16px;
+                        }
+                    }
+                }
+                .delete-address {
+                    width: max-content;
+                    color: var(--ui-red);
+                }
+            }
+            .address-description {
+                @include fontTitle1;
+                margin-left: 20px;
+                @include media($mobile) {
+                    max-width: 210px;
+                }
+                @include media($tablet) {
+                    max-width: 300px;
+                }
+                .description {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    padding: 5px;
+                    text-overflow: ellipsis;
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+
+    &__add-new-address {
+        display: flex;
+        align-items: center;
+
+        .checkbox {
+            margin-right: 16px;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+@import "../../assets/styles/mixins/mixins";
+
+.ProductCardContent {
+    &__content {
+        @include fontTitle1;
+        @include media($mobile) {
+            margin: 32px 0 40px;
+        }
+        @include media($tablet) {
+            display: flex;
+            margin: 40px 0 48px;
+        }
+        @include media($desktop) {
+            margin: 44px 0 40px;
+        }
+        @include media($large) {
+            margin-top: 38px;
+        }
+
+        .product-image {
+            margin-right: 40px;
+            background: url("../../assets/images/product.png") no-repeat center center;
+            background-size: contain;
+            flex-shrink: 0;
+            @include media($mobile) {
+                width: 328px;
+                height: 241px;
+            }
+            @include media($tablet) {
+                width: 244px;
+                height: 179px;
+            }
+            @include media($desktop) {
+                width: 507px;
+                height: 372px;
+            }
+            @include media($large) {
+                width: 520px;
+                height: 381px;
+            }
+        }
+
+
+        .Dish {
+            @include media($mobile) {
+                width: 328px;
+            }
+            @include media($tablet) {
+                width: 413px;
+            }
+            @include media($desktop) {
+                width: 380px;
+            }
+            @include media($large) {
+                width: 444px;
+            }
+
+            &__name {
+                margin-bottom: 40px;
+                @include fontTitle3;
+            }
+
+            &__composition {
+                margin-bottom: 40px;
+
+                .title {
+                    margin-bottom: 12px;
+                    color: var(--ui-gray-secondary);
+                }
+
+                .composition-wrapper {
+                    display: flex;
+
+                    .compound {
+                        margin-right: 4px;
+                    }
+                }
+            }
+
+            &__description-row {
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+
+                .weight {
+                    color: var(--ui-gray-secondary);
+                    flex-grow: 1;
+                    @include fontText1;
+                }
+
+                .price {
+                    @include fontButton;
+                    @include media($mobile) {
+                        width: 84px;
+                        height: 32px;
+                        padding: 8px 12px;
+                    }
+                    @include media($large) {
+                        width: 84px;
+                        height: 36px;
+                    }
+                }
+            }
+        }
+    }
+
+}
